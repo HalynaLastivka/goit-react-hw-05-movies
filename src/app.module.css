@@ -1,0 +1,13 @@
+.headerlink {
+    border-radius: 5px;
+    width: 300px;
+    border: 2px solid black;
+    margin: 20px;
+    padding: 5px;
+    text-decoration: none;
+
+}
+
+.header {
+    margin: 10px;
+}
