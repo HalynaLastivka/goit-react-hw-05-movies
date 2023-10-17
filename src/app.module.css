@@ -1,13 +1,167 @@
 .headerlink {
-    border-radius: 5px;
-    width: 300px;
-    border: 2px solid black;
-    margin: 20px;
-    padding: 5px;
+    padding: 15px;
+    color: gray;
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 18px;
     text-decoration: none;
 
+
+    transition: all 0.3s;
+
+
+}
+
+
+.addlink {
+    padding: 10px;
+    color: gray;
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+
+a.active {
+    border: 1px solid gray;
+    background-color: gray;
+    color: white;
 }
 
 .header {
-    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 15px;
+    -webkit-box-shadow: 0px 24px 60px 3px rgba(117, 117, 117, 1);
+    -moz-box-shadow: 0px 24px 60px 3px rgba(117, 117, 117, 1);
+    box-shadow: 0px 24px 60px 3px rgba(117, 117, 117, 1);
 }
+
+.titlemain {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(85, 82, 82);
+}
+
+
+
+.titleadd {
+    font-size: 18px;
+    font-weight: 700;
+
+}
+
+
+.movieList {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.addList {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+.overview {
+
+    width: 500px;
+}
+
+
+.fixedwidthtitle {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movieListItem {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wrapperMovie {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 15px;
+    padding-left: 20px;
+
+
+
+}
+
+.wrapperadd {
+    margin: 10px 50px;
+}
+
+.wrapgenres {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+.btnsearch {
+    margin-left: 10px;
+}
+
+
+.ulcast {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+
+}
+
+.castlist {
+    width: 200px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* .wrapper {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 70px;
+}
+
+.title,
+.text {
+    padding: 0;
+    margin: 0;
+} */

@@ -1,5 +1,5 @@
-// import ErrorMessage from 'components/ErrorMessage';
-// import Loader from 'components/Loader';
+import ErrorMessage from 'components/ErrorMessage';
+import Loader from 'components/Loader';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { findMovieReviewById } from 'services/api';
@@ -31,20 +31,21 @@ const MovieReview = () => {
 
   return (
     <div>
-      {/* {isLoading && <Loader />}
-      {error && <ErrorMessage message={error} />} */}
-      {reviews !== null && (
-        <ul>
-          {reviews.map(review => {
-            return (
+      {isLoading && <Loader />}
+      {error && <ErrorMessage message={error} />}
+      {reviews !== null &&
+        (reviews.length === 0 ? (
+          <p>There are no reviews for this movie</p>
+        ) : (
+          <ul>
+            {reviews.map(review => (
               <li key={review.id}>
                 <h4>{review.author}</h4>
                 <p>{review.content}</p>
               </li>
-            );
-          })}
-        </ul>
-      )}
+            ))}
+          </ul>
+        ))}
     </div>
   );
 };

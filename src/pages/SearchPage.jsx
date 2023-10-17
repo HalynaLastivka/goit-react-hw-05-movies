@@ -1,24 +1,11 @@
-// import { ReactComponent as IconSearch } from 'assets/images/search.svg';
-// import ErrorMessage from 'components/ErrorMessage';
-// import Loader from 'components/Loader';
+import ErrorMessage from 'components/ErrorMessage';
+import Loader from 'components/Loader';
 
 import { useEffect, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import { findbySearchWord } from 'services/api';
 import MovieListItem from '../components/MovieListItem';
-
-// (async () => { // -- IIFE (Immediately invoked function expression)
-//   try {
-//     setIsLoading(true);
-//     const postData = await findPostById(query);
-
-//     setPosts([postData]);
-//   } catch (error) {
-//     setError(error.message);
-//   } finally {
-//     setIsLoading(false);
-//   }
-// })()
+import css from 'app.module.css';
 
 const SearchPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -53,24 +40,33 @@ const SearchPage = () => {
     const searchValue = event.currentTarget.elements.searchPostId.value;
 
     setSearchParams({ query: searchValue });
-    console.log('dgfs');
   };
 
   return (
     <div>
-      <form onSubmit={handleFormSubmit}>
+      <form className={css.form} onSubmit={handleFormSubmit}>
         <label>
-          <p>Search post by id:</p>
+          <p>Search movie:</p>
           <input type="text" name="searchPostId" required />
         </label>
-        <button type="submit">Search</button>
+        <button className={css.btnsearch} type="submit">
+          Search
+        </button>
       </form>
 
       <section>
-        <ul className="postList">
+        {isLoading && <Loader />}
+        {error && <ErrorMessage message={error} />}
+        <ul className={css.movieList}>
           {movies !== null &&
             movies.map(movie => (
-              <MovieListItem id={movie.id} title={movie.title} key={movie.id} />
+              <MovieListItem
+                id={movie.id}
+                title={movie.title}
+                key={movie.id}
+                path={movie.poster_path}
+                location={location}
+              />
             ))}
         </ul>
       </section>
